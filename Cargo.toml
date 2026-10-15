@@ -1,0 +1,18 @@
+[package]
+name = "fountain-stage"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Stage extensions for Fountain syntax"
+license = "MIT"
+repository = "https://github.com/HenryByte/fountain-stage"
+readme = "README.md"
+
+[dependencies]
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
