@@ -1,15 +1,26 @@
 # fountain-stage
 Stage extensions for Fountain syntax in rust
 
+## Layout
+
+This is a Cargo workspace with two crates:
+
+| Crate | Path | What it is |
+| --- | --- | --- |
+| `fountain-stage` | `crates/fountain-stage` | Library: parsing and handling of the Fountain stage extensions |
+| `fountain-stage-cli` | `crates/fountain-stage-cli` | Command-line tool (binary `fountain-stage`) built on the library |
+
+Run the CLI with `cargo run -p fountain-stage-cli -- --help`.
+
 ## Development
 
 Requires a stable Rust toolchain (pinned via `rust-toolchain.toml`; MSRV 1.85).
 
 ```sh
 cargo fmt --all                               # format
-cargo clippy --all-targets --all-features     # lint (pedantic, warnings fail CI)
-cargo test --all-targets && cargo test --doc  # unit, integration and doc tests
-cargo doc --no-deps --open                    # API docs
+cargo clippy --workspace --all-targets        # lint (pedantic, warnings fail CI)
+cargo test --workspace                        # unit, integration and doc tests
+cargo doc --workspace --no-deps --open        # API docs
 cargo deny check                              # licences/advisories (cargo install cargo-deny)
 ```
 
